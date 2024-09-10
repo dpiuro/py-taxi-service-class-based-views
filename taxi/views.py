@@ -1,6 +1,8 @@
 from django.shortcuts import render
 from django.views.generic import ListView, DetailView
-from .models import Car, Driver, Manufacturer
+
+
+from .models import Driver, Car, Manufacturer
 
 
 def index(request):
@@ -14,7 +16,7 @@ def index(request):
 
 class ManufacturerListView(ListView):
     model = Manufacturer
-    queryset = Manufacturer.objects.all().order_by("name")
+    queryset = Manufacturer.objects.order_by("name")
     paginate_by = 5
 
 
